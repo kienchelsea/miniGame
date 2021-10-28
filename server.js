@@ -12,7 +12,9 @@ var array = [];
 io.on("connection", function(socket){
     console.log("Co nguoi ket noi" + socket.id);
     socket.on("student-send-information", function(data){
-        
+        array.push(
+            new Student(data.hoten, data.email, data.dienthoai)
+        )
         io.sockets.emit("Server-send-listUser",)
     })
 })
